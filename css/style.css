@@ -11,7 +11,9 @@
    align-items: center;
    justify-content: space-between;
 }
-
+.logo{
+    margin-left: 10%;
+}
 .search{
    background: #fff;
 
