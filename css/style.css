@@ -6,6 +6,11 @@ body{
     padding-top: 44px;
     padding-left: 1%;
 }
+
+.main{
+    background: linear-gradient(180deg, rgba(245, 245, 245, 0) 1.04%, #F5F5F5 100%);
+}
+
 .container{
     max-width: 1200px;
     margin: auto ;
@@ -16,11 +21,19 @@ header{
    align-items: center;
    justify-content: space-between;
 }
-
+.card-buttons{
+   display: flex;
+   align-items: center;
+}
+.text{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 32px;
+}
 .section-head{
     display: flex;
     align-items: center;
-    justify-content: space-between;
 }
 
 .input{
@@ -37,14 +50,16 @@ header{
 .search{
    margin-left: 102px;
    border-radius: 2px;
-   width: 690px;
+   flex:0.8;
    background-image: url(../img/Vector.png);
    background-repeat: no-repeat;
    background-position: left 11px center;
 }
+
 .input-search{
    background-image: url(../img/search.png);
-   width: 300px;
+   max-width: 300px;
+   margin-left: auto;
 }
 
 .button{
@@ -71,6 +86,15 @@ header{
     border: 1px solid #1890FF;
     color: #FFFFFF;
 }
+.button-card{
+    padding: 8px 30px;        
+    background: #1890FF url(../img/shopping-cart.png) no-repeat left 10px center;
+    border-radius: 2px;
+    border: 1px solid #1890FF;
+    color: #FFFFFF;
+    margin-right: 32px;
+}
+
 .button-text{
 
     font-family: 'SF Pro Display';
@@ -84,7 +108,8 @@ header{
 .promo{
     margin-top: 40.3px;
     box-shadow: 0px 7px 12px rgba(158, 158, 163, 0.1);
-    background: #FFF1B8 url(../img/tomat.png) no-repeat top right -220px;
+    background: #FFF1B8 url(../img/pizza.png) no-repeat top right -200px ;
+    background-size: 800px;
     border-radius: 10px;
     padding: 38px 70px;
     margin-bottom: 56px;
@@ -113,6 +138,7 @@ header{
     font-size: 36px;
     line-height: 42px;
     color: #000000;
+    margin-right: 30px;
 }
 .carts{
     display: flex;
@@ -125,10 +151,10 @@ header{
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
     border-radius: 7px;
     margin-bottom: 30px;
+    flex-basis: 31%;
 }
 
 .card-image{
-    width: 384px;
     height: 250px;
     object-fit: cover;
 }
@@ -154,6 +180,17 @@ header{
     line-height: 32px;
 }
 
+.card-title-reg{
+    font-weight: 400;
+}
+.ingredients{
+    padding-top: 10px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #8C8C8C;
+}
 .card-tag{
     font-style: normal;
     font-weight: 400;
@@ -168,6 +205,7 @@ header{
 .card-info{
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .rating{
@@ -189,7 +227,12 @@ header{
 .price{
     margin-right: 10px;
 }
-
+.category{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 150px;
+}
 .price::after{
     content: "";
     width: 5px;
@@ -199,4 +242,92 @@ header{
     vertical-align: middle;
     border-radius: 50%;
     margin-left: 10px;
+}
+
+.footer{
+    padding: 60px 0;
+}
+
+.footer-block{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-nav{
+    margin-left: 35px;
+    margin-right: auto;
+}
+
+.footer-link{
+    display: inline-block;
+    color: #595959;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    text-decoration: none; 
+}
+
+.footer-link:not(:last-child){
+    margin-right: 15px;
+}
+
+.social-links{
+    display: flex;
+    align-items: center;
+}
+
+.social-link:not(:last-child){
+    margin-right: 21px;
+}
+
+@media (max-width:1366px) {
+    .container{
+        max-width: 960px;
+    }
+    .promo{
+        background-size: 550px;
+        background-position: center right -200px;
+    }
+    .rating{
+        margin-right: 15px;
+    }
+    .category, .price{
+        font-size:14px;
+    }
+}
+
+@media (max-width:992px){
+    .container{
+        max-width: 750px;
+    }
+    .promo{
+        padding: 50px;
+        background-size: 350px;
+        background-position: center right -100px;
+    }
+    .card{
+        flex-basis: 49%;
+    }
+}
+
+@media (max-width:768px){
+    .container{
+        max-width: 500px;
+    }
+    .rating{
+        flex-basis: 100%;
+    }
+    .promo{
+        padding: 50px;
+        background-size: 350px;
+        background-position: center right -100px;
+    }
+    .card-info{
+        flex-wrap: wrap;
+    }
+    .card-title{
+        font-size: 18px;
+    }
 }
