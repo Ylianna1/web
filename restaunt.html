@@ -6,18 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <title>Тануки</title>
 </head>
 <body>
     <div class="container">
         <header>
-            <img src="img/logo.png" alt="" class="logo"/>
+            <img src="img/logo.png" alt="" class="logo animate__animated animate__fadeInRight delay-is"/>
             <input type="text" class="input search" placeholder="Адреса доставки"/>
                 <button class="button button-primary">
                    <span class="button-text">Увійти</span>
                 </button>
-                <button class="button">
+                <button class="button" id="cart-button">
                     Кошик
                 </button>
         </header>
@@ -40,7 +41,7 @@
                     </div>
                 </div>
                 <div class="carts">
-                    <div class="card">
+                    <div class="card animate__animated animate__fadeInUp delay-is">
                         <img src="img/image.png" alt="" class="card-image" />
                         <div class="card-text">
                             <div class="card-headung">
@@ -61,7 +62,7 @@
                         <!--/.card-text-->
                     </div>
                     <!--/.card-->
-                    <div class="card">
+                    <div class="card animate__animated animate__fadeInUp delay-is">
                         <img src="img/image (1).png" alt="" class="card-image" />
                         <div class="card-text">
                             <div class="card-headung">
@@ -82,7 +83,7 @@
                         <!--/.card-text-->
                     </div>
                     <!--/.card-->
-                    <div class="card">
+                    <div class="card animate__animated animate__fadeInUp delay-is">
                         <img src="img/image (2).png" alt="" class="card-image" />
                         <div class="card-text">
                             <div class="card-headung">
@@ -103,7 +104,7 @@
                         <!--/.card-text-->
                     </div>
                     <!--/.card-->
-                    <div class="card">
+                    <div class="card animate__animated animate__fadeInUp delay-is">
                         <img src="img/image (3).png" alt="" class="card-image" />
                         <div class="card-text">
                             <div class="card-headung">
@@ -124,7 +125,7 @@
                         <!--/.card-text-->
                     </div>
                     <!--/.card-->
-                    <div class="card">
+                    <div class="card animate__animated animate__fadeInUp delay-is">
                         <img src="img/image (4).png" alt="" class="card-image" />
                         <div class="card-text">
                             <div class="card-headung">
@@ -145,7 +146,7 @@
                         <!--/.card-text-->
                     </div>
                     <!--/.card-->
-                    <div class="card">
+                    <div class="card animate__animated animate__fadeInUp delay-is">
                         <img src="img/image (5).png" alt="" class="card-image" />
                         <div class="card-text">
                             <div class="card-headung">
@@ -172,7 +173,7 @@
         </div>
     </main>
 
-    <FOOter class="footer">
+    <footer class="footer">
         <div class="container">
             <div class="footer-block">
                 <img src="img/logo.png" alt="" class="logo footer-logo"/>
@@ -189,7 +190,40 @@
                 </div>
             </div>
         </div>
-    </FOOter>
+    </footer>
+
+    <div class="modal">
+       <div class="modal-dialog">
+           <div class="modal-header">
+               <h3 class="modal-title">Кошик</h3>
+               <button class="close">&times;</button>
+           </div>
+           <!--/modal-header-->
+           <div class="modal-body">
+               <div class="food-row">
+                   <span class="food-name">Рол вугор стандартний</span>
+                   <strong class="food-price">250 ₽</strong>
+                   <div class="food-counter">
+                       <button class="counter-button">-</button>
+                       <span class="counter">1</span>
+                       <button class="counter-button">+</button>
+                   </div>
+               </div>
+               <!--/foods-row-->
+           </div>
+           <!--/modal-body-->
+           <div class="modal-footer">
+               <span class="pricetag">1250 ₽</span>
+               <div class="footer-buttons">
+                   <button class="button button-primary">Оформити замовлення</button>
+                   <button class="button">Скасування</button>
+               </div>
+           </div>
+           <!--/modal-footer-->
+       </div> 
+       <!--/modal-dialog-->
+    </div>
+    <script src="js/main.js"></script>
 
 </body>
 </html>
