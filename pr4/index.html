@@ -15,7 +15,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 </head>
+
 <body>
     <div class="wrapper">
         <header class="header">
@@ -26,10 +29,33 @@
                 <button class="button" id="cart"><img src="./img/cart.svg" alt="Cart" class="icon"><span class="text">Корзина</span></button>  
             </div>   
         </header>
-        <section class="banner">
+        <div class="swiper-container">
+        <section class="swiper-wrapper">
+            <section class="banner swiper-slide">
             <h1 class="banner-tittle">Онлайн-сервис <br/>доставки еды на дом</h1>
             <p class="banner-text">Блюда из любимого ресторана привезет <br/>курьер в перчатках, маске и с антисептиком</p>
+            </section>
+            <section class="banner swiper-slide" style="background-color: rgb(237, 186, 186);">
+                <h1 class="banner-tittle">Шашлыки на майские <br> со скидкой 35%</h1>
+                <p class="banner-text">
+                    Закажите шашлыки в любом ресторане до 10 мая и получите скидку по промокоду OMAGAD
+                </p>
+            </section>
+            <section class="banner swiper-slide" style="background-color:  rgb(187, 239, 198);">
+                <h1 class="banner-tittle">Скидка 20% на всю еду <br> по промокоду LOVE.JS</h1>
+                <p class="banner-text">
+                    Блюдо из ресторана привезут вместе с двумя подарочными книгами по фронтенду
+                </p>
+            </section>
+            <section class="banner swiper-slide" style="background-color:  rgb(182, 196, 232);">
+                <h1 class="banner-tittle">Сеты со скидкой до 30% <br> в ресторанах</h1>
+                <p class="banner-text">
+                    Скидки на сеты до 30 мая по промокоду DADADA
+                </p>
+            </section> -->
         </section>
+        </section>
+    </div>
         <section class="restourants">
             <div class="section-heading">
                 <h2 class="section-title">Рестораны</h2>

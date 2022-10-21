@@ -161,3 +161,13 @@ function openGoods(event){
 }
 
 cardsRestaurants.addEventListener('click', openGoods);
+
+//slider
+
+new Swiper('.swiper-container', {
+    sliderPerView: 1,
+    loop: true,
+    autoplay:true,
+    effect:'flipe',
+    grabCursor: true,
+})
