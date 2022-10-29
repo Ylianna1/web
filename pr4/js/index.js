@@ -13,6 +13,15 @@ const cardsRestaurants = document.querySelector('#cards-restarants');
 
 let login = localStorage.getItem("gloDelivery");
 
+
+const getData = async function(url){
+    const respaunce = fetch(url);
+};
+
+getData('./db/partners.json').then(function(data){
+    data.forEach(creslecardsRestaurants);
+});
+
 const modalProb = document.querySelector(".modal-prob");
 const closeProb = document.querySelector(".close-prob");
 
@@ -114,20 +123,33 @@ closeModal.addEventListener("click", ()=>{
 
 new WOW().init();
 
-function creslecardsRestaurants(){
+function creslecardsRestaurants(restaurant){
+
+    console.log(restaurant);
+
+    const{
+        image,
+        kitchen,
+        name,
+        price,
+        stars,
+        products,
+        time_of_delivery: timeOfDelivery
+    }= restaurant;
+
     const card =`
-        <a class="card  animate__animated animate__pulse">
-        <img src="./img/cards/1.png" alt="image" class="card-image">
+        <a class="card  animate__animated animate__pulse" data-products="${products}">
+        <img src="${image}" alt="image" class="card-image">
             <div class="card-text">
                 <div class="card-heading">
-                    <h3 class="card-title">Пицца плюс</h3>
-                    <span class="card-tag tag">50 мин</span>
+                    <h3 class="card-title">${name}"</h3>
+                    <span class="card-tag tag">${timeOfDelivery} мин</span>
                 </div>
                 <div class="card-info">
                     <div class="rating">
-                        <img src="./img/cards/rating.svg" alt=""> 4.5</div>
-                    <div class="price">От 900 ₽</div>
-                    <div class="category">Пицца</div>
+                        <img src="./img/cards/rating.svg" alt="">${stars}</div>
+                    <div class="price">От ${price} ₽</div>
+                    <div class="category">${kitchen}</div>
                 </div>
             </div>
         </a>
@@ -150,10 +172,9 @@ function openGoods(event){
             containerPromo.classList.add('hide');
             cardsRestaurants.classList.add('hide');
             menubar.classList.remove('hide');
-
-            createCardGood();
-            createCardGood();
-            createCardGood();
+            getData(`./db/${restaurant.dataset.products}`).then(function(data){
+                data.forEach(openGoods);
+            });
         }
     }else{
             LogToggleModal();
