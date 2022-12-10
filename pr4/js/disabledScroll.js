@@ -1,11 +1,15 @@
-window.disableScroll = function(){
-    document.body.style.cssText =`
-        position: relative;
-        overflow: hidden;
-        height:100vh;
-    `;
-}
+const widthScroll = window.innerWidth - document.body.offsetWidth;
+window.disabledScroll = function () {
+    document.body.dbScrollY = window.scrollY;
 
-window.enableScroll = function(){
-    document.body.style.cssText =``;
-}
+    document.body.style.cssText =`
+    position: relative;
+    overflow: hidden;
+    height:100vh;
+    `;
+};
+
+window.enabledScroll = function () {
+    document.body.style.cssText = `position: relative;`; 
+    window.scroll({top: document.body.dbScrollY});
+};
